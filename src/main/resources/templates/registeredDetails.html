@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Registered Details</title>
+</head>
+<body style="text-align:center">
+<br>
+<br>
+<h2 style="color:blue">REGISTERED EMPLOYEE DETAILS</h2>
+<br>
+<br>
+<table border="1" style ="margin-left:auto;margin-right:auto">
+<tr><th>UserId</th><th>Type</th><th>Assessment</th><th>Date</th></tr>
+<tr th:each="details: ${AssessmentRegistration}" >
+	<td th:text="${details.userId}"></td>
+	<td th:text="${details.assessmentType}"></td> 
+	<td th:text="${details.assessment}"></td>
+	<td th:text="${details.date}"></td> 
+</tr>
+</table>
+</body>
+</html>
