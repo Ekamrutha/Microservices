@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Behavioral Assessment Registration</title>
+</head>
+<style>
+h1 {
+	text-align: center
+}
+
+input[type="submit"] {
+	background-color: green;
+	color: white;
+}
+
+.center {
+	margin-left: auto;
+	margin-right: auto
+}
+</style>
+<body>
+	<br>
+	<br>
+	<br>
+	<h1 style="color: blue">REGISTRATION FORM</h1>
+	<br>
+	<form action="/behavioral/status" method=POST>
+		<table class="center">
+			<tr>
+				<th colspan="2">Behavioral Assessment Registration</th>
+			</tr>
+			<tr>
+				<td>UserId</td>
+				<td><input type="text" name="userId"></td>
+			</tr>
+			<tr>
+				<td>Assessment</td>
+				<td><select name="Assessment">
+						<option value="emailEtiquette">Email Etiquette</option>
+						<option value="codeOfConduct">Code Of Conduct</option>
+						<option value="businessCommunication">Business
+							Communication</option>
+						<option value="stepPlus">Step Plus</option>
+				</select></td>
+			</tr>
+			<tr>
+				<td>Date</td>
+				<td><input type="date" id="date" name="date"></td>
+			</tr>
+			<tr style="text-align: center">
+				<td colspan="2"><input type="submit" name="Register"
+					value="Register"></td>
+			</tr>
+		</table>
+	</form>
+	<script type="text/javascript">
+		var today = new Date().toISOString().split('T')[0];
+		document.getElementsByName("date")[0].setAttribute('min', today);
+	</script>
+</body>
+</html>
